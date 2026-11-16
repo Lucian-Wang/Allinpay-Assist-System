@@ -1,0 +1,72 @@
+openapi: 3.0.1
+info:
+  title: 通用支付API
+  version: '1.0'
+  description: 通用第三方支付对接API，适配通联支付，支持下单、查单
+servers:
+  - url: https://allinpay.zhuli.pro/commonpay/api
+
+paths:
+  /pay.php:
+    post:
+      summary: 创建支付订单
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                channel: { type: string, description: 通道标识 }
+                pay_order_no: { type: string, description: 平台支付订单号 }
+                amount: { type: string, description: 金额（元） }
+                subject: { type: string, description: 商品名称 }
+                user_id: { type: string, description: 业务用户ID }
+                biz_sys: { type: string, description: 业务系统标识 }
+                biz_order_no: { type: string, description: 业务订单号 }
+                notify_url: { type: string, description: 回调通知地址 }
+                return_url: { type: string, description: 支付完成后跳转地址 }
+                extra: { type: string, description: 扩展参数 }
+              required: [channel, pay_order_no, amount, subject]
+      responses:
+        '200':
+          description: 下单成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code: { type: integer }
+                  msg: { type: string }
+                  data:
+                    type: object
+                    properties:
+                      pay_url: { type: string }
+                      pay_order_no: { type: string }
+  /order.php:
+    get:
+      summary: 查询订单状态
+      parameters:
+        - name: pay_order_no
+          in: query
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: 查询成功
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code: { type: integer }
+                  msg: { type: string }
+                  data:
+                    type: object
+                    properties:
+                      pay_order_no: { type: string }
+                      status: { type: string, enum: [pending, paid, fail, closed] }
+                      amount: { type: string }
+                      subject: { type: string }
+                      paid_at: { type: string }
+                      allinpay_trxid: { type: string }

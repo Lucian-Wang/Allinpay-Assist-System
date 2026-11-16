@@ -1,0 +1,245 @@
+body {
+    background: #f7fafd;
+    font-family: 'Segoe UI', 'PingFang SC', 'Hiragino Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.topnav {
+    background:#3183f4;
+    color:#fff;
+    height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 36px;
+    font-size: 1rem;
+}
+.topnav .logo {
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+.topnav .menu {
+    display: flex;
+    gap: 30px;
+}
+.topnav .menu a {
+    color:#fff;
+    text-decoration:none;
+    padding: 0 5px;
+    font-size: 1.06rem;
+    line-height: 58px;
+    border-bottom: 2px solid transparent;
+    transition: border .18s;
+}
+.topnav .menu a.active,
+.topnav .menu a:hover {
+    border-bottom: 2px solid #fff;
+}
+.topnav .user {
+    margin-left: 24px;
+    font-size: 1.01rem;
+}
+.topnav .user a {
+    color:#fff;
+    text-decoration:none;
+    margin-left: 12px;
+}
+.topnav .user a:hover { text-decoration: underline; }
+
+.main-content {
+    max-width: 980px;
+    margin: 42px auto 0 auto;
+    padding: 0 18px 38px 18px;
+    width: 100%;
+}
+
+.content-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(49,131,244,0.08);
+    padding: 38px 32px 24px 32px;
+    margin-bottom: 32px;
+}
+
+.card-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+.card-title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #3183f4;
+    margin: 0;
+}
+.card-actions a {
+    color: #3183f4;
+    margin-left: 18px;
+    font-size: 1rem;
+    text-decoration: none;
+}
+.card-actions a:hover { text-decoration: underline; }
+
+.button {
+    background: #3183f4;
+    color: #fff;
+    border: none;
+    padding: 9px 24px;
+    border-radius: 7px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-top: 2px;
+    transition: background 0.2s;
+    display: inline-block;
+}
+.button:hover { background: #266ad1; }
+
+.table {
+    width: 100%;
+    min-width: 300px;
+    border-collapse: collapse;
+    font-size: 15px;
+    background: #fff;
+    margin: 0;
+}
+.table th, .table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #e9eff6;
+    text-align: left;
+}
+.table th {
+    background: #f3f7fd;
+    color: #3183f4;
+    font-weight: 600;
+}
+.table td { color: #222; }
+.actions a {
+    color: #3183f4;
+    margin-right: 8px;
+    text-decoration: none;
+}
+.actions a:hover { text-decoration: underline; }
+
+@media (max-width: 1100px) {
+    .main-content, .content-card { max-width: 100vw; padding: 12px 2vw;}
+    .main-content { margin: 16px auto 0 auto;}
+}
+/* 通用表单美化 */
+.form-group {
+    margin-bottom: 22px;
+}
+.form-group label {
+    font-size: 1.13rem;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 7px;
+    display: block;
+    letter-spacing: 0.5px;
+}
+
+/* 主要输入框美化 */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 14px;
+    font-size: 1.1rem;
+    border: 1.5px solid #e2e6ef;
+    border-radius: 8px;
+    background: #fafdff;
+    outline: none;
+    transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+    margin-top: 4px;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    border-color: #3183f4;
+    background: #f3f7fd;
+    box-shadow: 0 0 0 2px rgba(49,131,244,0.08);
+}
+
+/* 禁用/只读样式 */
+input[readonly], input:disabled {
+    background: #f3f7fd;
+    color: #aaa;
+}
+
+/* 提示小字 */
+.form-group small {
+    color: #888;
+    font-size: 13px;
+    margin-top: 2px;
+    display: inline-block;
+}
+.button, a.button {
+    background: #3183f4;
+    color: #fff !important;
+    border: none;
+    padding: 9px 24px;
+    border-radius: 12px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-top: 2px;
+    transition: background 0.2s;
+    display: inline-block;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(49,131,244,0.06);
+    text-decoration: none !important;
+}
+.button:hover, a.button:hover {
+    background: #1761a0;
+    color: #fff !important;
+}
+.button:active, a.button:active {
+    background: #1452a5;
+    color: #fff !important;
+}
+a, a:visited {
+    color: #3183f4;
+    text-decoration: none;
+    transition: color .18s;
+}
+a:hover, a:active {
+    color: #1761a0;
+    text-decoration: none;
+}
+/* 通用美化所有 select 下拉框 */
+select {
+    appearance: none; /* 去除系统默认样式 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #f8fafc;
+    border: 1px solid #e4e7ed;
+    border-radius: 8px;
+    padding: 10px 38px 10px 12px;
+    font-size: 16px;
+    color: #222;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+    box-shadow: 0 1px 4px #0001;
+    background-image: url("data:image/svg+xml;charset=UTF-8,<svg width='14' height='14' viewBox='0 0 1024 1024' fill='gray' xmlns='http://www.w3.org/2000/svg'><path d='M512 672c-8.2 0-16.4-3.1-22.6-9.4l-256-256c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L512 594.7l233.4-233.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-256 256c-6.2 6.3-14.4 9.4-22.7 9.4z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 18px 18px;
+}
+select:focus {
+    border-color: #409eff;
+    box-shadow: 0 0 0 2px #409eff22;
+}
+select:disabled {
+    background-color: #f5f5f5;
+    color: #bbb;
+    cursor: not-allowed;
+    border-style: dashed;
+}
